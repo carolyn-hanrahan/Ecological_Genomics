@@ -43,3 +43,4 @@
 - We ran the mapping.sh file over the weekend for our red spruce populations. 
 - Visualize sequence alignment files (*.sam) from our mapping
 - Process the files to binary and started running `bam_stats.sh` as well as `process_bam.sh`
+- Talked to Nicole about paper selection for class
