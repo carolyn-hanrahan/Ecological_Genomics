@@ -44,3 +44,8 @@
 - Visualize sequence alignment files (*.sam) from our mapping
 - Process the files to binary and started running `bam_stats.sh` as well as `process_bam.sh`
 - Talked to Nicole about paper selection for class
+
+### Entry 4: 2023-09-20
+- We finished processing `bam_stats.sh` by altering the vim file and running `bash bam_stats.sh`. Following this, we examined the read data by using the head command. 
+- Created an ANGSD directory and a script for running the ANGSD program to determine genotype likelihood.
+- Began running this script using `tmux` in the background. 
