@@ -4,7 +4,7 @@
 
 ### Affiliation: University of Vermont, RSENR
 
-### E-mail contact: [carolyn.hanrahan\@uvm.edu](mailto:carolyn.hanrahan@uvm.edu){.email}
+### E-mail contact: [carolyn.hanrahan\@uvm.edu](mailto:carolyn.hanrahan@uvm.edu)
 
 ### Start Date: 09/11/2023
 
@@ -17,6 +17,7 @@
 -   [Entry 1: 2023-09-11](#id-section1)
 -   [Entry 2: 2023-09-13](#id-section2)
 -   [Entry 3: 2023-09-18](#id-section3)
+-   [Entry 4: 2023-09-20](#id-section4)
 
 
 
