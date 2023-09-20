@@ -1,4 +1,4 @@
-# Population Genomics
+# <span style = "color:purple;" > Population Genomics</span>
 
 ## Author: Carolyn Hanrahan
 
