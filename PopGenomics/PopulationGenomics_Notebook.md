@@ -50,3 +50,11 @@
 -   We finished processing `bam_stats.sh` by altering the vim file and running `bash bam_stats.sh`. Following this, we examined the read data by using the head command.
 -   Created an ANGSD directory and a script for running the ANGSD program to determine genotype likelihood.
 -   Began running this script using `tmux` in the background.
+
+### Entry 5: 2023-09-25
+
+- Today's learning objectives: 
+  - Calculate diversity stats for our focal pops (SFS, theta-W, theta-Pi, Tajima’s D)
+  - Summarize the results in R and share to google doc
+  - Introduce Fst in ANGSD using genotype probabilities
+-
