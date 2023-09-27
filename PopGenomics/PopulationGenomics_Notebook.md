@@ -18,6 +18,8 @@
 -   [Entry 2: 2023-09-13](#id-section2)
 -   [Entry 3: 2023-09-18](#id-section3)
 -   [Entry 4: 2023-09-20](#id-section4)
+-   [Entry 5: 2023-09-25](#id-section5)
+-   [Entry 6: 2023-09-27](#id-section6)
 
 <div id='id-section1'/>
 
@@ -57,4 +59,10 @@
   - Calculate diversity stats for our focal pops (SFS, theta-W, theta-Pi, Tajima’s D)
   - Summarize the results in R and share to google doc
   - Introduce Fst in ANGSD using genotype probabilities
--
+
+### Entry 6: 2023-09-27
+
+- Today's learning objectives: 
+  - Review the diversity stats for our focal pops on the google doc
+  - Estimate genetic differentiation (Fst) in ANGSD between our focal red spruce pops and black spruce
+  - Visualize population structure using PCA and Admixture
