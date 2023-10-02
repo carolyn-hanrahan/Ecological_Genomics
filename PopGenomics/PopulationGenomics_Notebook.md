@@ -65,4 +65,11 @@
 - Today's learning objectives: 
   - Review the diversity stats for our focal pops on the google doc
   - Estimate genetic differentiation (Fst) in ANGSD between our focal red spruce pops and black spruce
-  - Visualize population structure using PCA and Admixture
+  - Visualize population structure using PCA (principle component analysis) and Admixture
+  
+### Entry 7: 2023-10-02
+
+- Today is a coding and bioinformatics day. Goals include: 
+  - Review the population structure results
+  - Perform a scan for selection and identify contigs with outlier loci
+  - Identify and visualize outlier loci
