@@ -20,6 +20,7 @@
 -   [Entry 4: 2023-09-20](#id-section4)
 -   [Entry 5: 2023-09-25](#id-section5)
 -   [Entry 6: 2023-09-27](#id-section6)
+-   [Entry 7: 2023-10-02](#id-section7)
 
 <div id='id-section1'/>
 
