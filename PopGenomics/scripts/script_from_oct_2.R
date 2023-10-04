@@ -72,4 +72,4 @@ write.table(unique(outlier_contig$chromo),
             row.names=F,
             col.names=F)
 
-            )
+        

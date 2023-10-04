@@ -21,7 +21,8 @@
 -   [Entry 5: 2023-09-25](#id-section5)
 -   [Entry 6: 2023-09-27](#id-section6)
 -   [Entry 7: 2023-10-02](#id-section7)
-
+-   [Entry 8: 2023-10-04](#id-section8)
+git
 <div id='id-section1'/>
 
 ### Entry 1: 2023-09-11.
@@ -74,3 +75,13 @@
   - Review the population structure results
   - Perform a scan for selection and identify contigs with outlier loci
   - Identify and visualize outlier loci
+  
+## Entry 8: 2023-10-04
+
+- Today's goals include:
+  - Revisit pcANGSD selection scan to output genetic PCs and outlier loci list
+  - Extract climate data for red spruce localities and summarize with PCA
+  - Run genotype-environment association (GEA) analysis running
+- Notes: 
+  - Genotype data (SNPs) + environmental data (climate) --> genome wide average 
+  - Env (y) = Genotype (locus specific) + covariates (genetic PCs)
