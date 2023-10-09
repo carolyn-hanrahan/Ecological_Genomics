@@ -92,3 +92,19 @@
   2. genetic PCA --> genetic PC1 + PC2 as covariates
   3. Get bioclim environment variables 
   4. Transfer files to server -- run GEA. 
+  
+  ## Entry 9: 2023-10-09
+  
+- Transcriptomics unit; reading paper on Colorado Potato Beetle and insecticide resistance. 
+  
+- Coding goals for the day: 
+  - Review Acartia hudsonica ecology and biogeography and the experimental evolution/transcriptomics experimental design.
+
+  - Develop questions that can be addressed and hypotheses that can be tested with the A. hudsonica experiment.
+
+  - Understand the general work flow or “pipeline” for processing and analyzing RNAseq data.
+
+  - Visualize and interpret the quality of our Illumina data.
+
+  - Assess our previously assembled de novo transcriptome assembly using Trinity.
+Start mapping reads and quantifying abundance simultaneously using Salmon.
