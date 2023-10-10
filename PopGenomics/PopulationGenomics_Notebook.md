@@ -93,7 +93,7 @@
   3. Get bioclim environment variables 
   4. Transfer files to server -- run GEA. 
   
-  ## Entry 9: 2023-10-09
+## Entry 9: 2023-10-09
   
 - Transcriptomics unit; reading paper on Colorado Potato Beetle and insecticide resistance. 
   
