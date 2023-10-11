@@ -99,8 +99,6 @@ ggscatter(data, x = "V1", y = "V2",
 
 
 
-
-
 ## Next, we can look at the admixture clustering:
 
 # import the ancestry scores (these are the .Q files)

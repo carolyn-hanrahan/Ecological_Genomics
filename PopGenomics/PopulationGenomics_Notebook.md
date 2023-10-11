@@ -108,3 +108,16 @@
 
   - Assess our previously assembled de novo transcriptome assembly using Trinity.
 Start mapping reads and quantifying abundance simultaneously using Salmon.
+
+## Entry 10: 2023-10-11:
+
+- Transcriptomics DAY 2. 
+- Copepod study 
+  - effect of environment of Genetic Evolution 
+  - signature of physiological adaptation in F2, F4, F11...
+  - does the gene response in a given environment depend on the generation? We will conduct a statistical test for interaction between environmental conditions and generation. 
+  - Interaction between environment and generation 
+  
+- Today we are... 
+   - cleaning the raw sequence data 
+   - generating and annotating a de novo reference transcriptome 
