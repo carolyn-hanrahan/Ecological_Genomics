@@ -1,0 +1,3 @@
+AA_F11_Rep1	AA_F11_Rep1	/data/project_data/RNAseq/cleandata/AA_F11_Rep1_1_clean.fq.gz	/data/project_data/RNAseq/cleandata/AA_F11_Rep1_2_clean.fq.gz
+AA_F11_Rep2	AA_F11_Rep2	/data/project_data/RNAseq/cleandata/AA_F11_Rep2_1_clean.fq.gz	/data/project_data/RNAseq/cleandata/AA_F11_Rep2_2_clean.fq.gz
+AA_F11_Rep3	AA_F11_Rep3	/data/project_data/RNAseq/cleandata/AA_F11_Rep3_1_clean.fq.gz	/data/project_data/RNAseq/cleandata/AA_F11_Rep3_2_clean.fq.gz
