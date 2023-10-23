@@ -372,7 +372,7 @@ dim(dds)
 # [1] 67916    38
 
 # Filter 
-dds <- dds[rowSums(counts(dds) >= 30) >= 28,]
+dds <- dds[rowSums(counts(dds) >= 15) >= 28,]
 nrow(dds) 
 
 # Subset the DESeqDataSet to the specific level of the "generation" factor
@@ -415,6 +415,110 @@ p <- p + stat_summary(fun = mean, geom = "point", size=5, alpha=0.7)
 p
 
 # this is showing differential expression for generation F0 ^ 
+
+# sideways volcano plot (MA plot)
+plotMA(res_F0_OWvAM, ylim=c(-4,4))
+
+
+######################################## HEATMAP 
+
+# Heatmap of top 20 genes sorted by pvalue
+
+library(pheatmap)
+
+# By environment
+vsd <- vst(dds_sub, blind=FALSE)
+
+topgenes <- head(rownames(res_F0_OWvAM),20)
+mat <- assay(vsd)[topgenes,]
+mat <- mat - rowMeans(mat)
+df <- as.data.frame(colData(dds_sub)[,c("generation","treatment")])
+pheatmap(mat, annotation_col=df)
+pheatmap(mat, annotation_col=df, cluster_cols = F)
+
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ VENN DIAGRAM~~~~~~~~~~~~~
+
+#################################################################
+
+#### PLOT OVERLAPPING DEGS IN VENN EULER DIAGRAM
+
+#################################################################
+
+# For OW vs AM
+res_F0_OWvAM <- results(dds_sub, name="treatment_OW_vs_AM", alpha=0.05)
+res_F0_OWvAM <- res_F0_OWvAM[order(res_F0_OWvAM$padj),]
+head(res_F0_OWvAM)
+
+summary(res_F0_OWvAM)
+res_F0_OWvAM <- res_F0_OWvAM[!is.na(res_F0_OWvAM$padj),]
+degs_F0_OWvAM <- row.names(res_F0_OWvAM[res_F0_OWvAM$padj < 0.05,])
+
+# For OA vs AM
+res_F0_OAvAM <- results(dds_sub, name="treatment_OA_vs_AM", alpha=0.05)
+res_F0_OAvAM <- res_F0_OAvAM[order(res_F0_OAvAM$padj),]
+head(res_F0_OAvAM)
+
+summary(res_F0_OAvAM)
+res_F0_OAvAM <- res_F0_OAvAM[!is.na(res_F0_OAvAM$padj),]
+degs_F0_OAvAM <- row.names(res_F0_OAvAM[res_F0_OAvAM$padj < 0.05,])
+
+# For OWA vs AM
+res_F0_OWAvAM <- results(dds_sub, name="treatment_OWA_vs_AM", alpha=0.05)
+res_F0_OWAvAM <- res_F0_OWAvAM[order(res_F0_OWAvAM$padj),]
+head(res_F0_OWAvAM)
+
+summary(res_F0_OWAvAM)
+res_F0_OWAvAM <- res_F0_OWAvAM[!is.na(res_F0_OWAvAM$padj),]
+degs_F0_OWAvAM <- row.names(res_F0_OWAvAM[res_F0_OWAvAM$padj < 0.05,])
+
+library(eulerr)
+
+# Total
+length(degs_F0_OAvAM)  # 520
+length(degs_F0_OWvAM)  # 4841 
+length(degs_F0_OWAvAM)  # 3742
+
+# Intersections
+length(intersect(degs_F0_OAvAM,degs_F0_OWvAM))  # 387
+length(intersect(degs_F0_OAvAM,degs_F0_OWAvAM))  # 340
+length(intersect(degs_F0_OWAvAM,degs_F0_OWvAM))  # 2585
+
+intWA <- intersect(degs_F0_OAvAM,degs_F0_OWvAM)
+length(intersect(degs_F0_OWAvAM,intWA)) # 308
+
+# Number unique
+
+520-387-340+308 # 101 OA
+4841-387-2585+308 # 2177 OW 
+3742-340-2585+308 # 1125 OWA
+
+387-308 # 79 OA & OW
+340-308 # 32 OA & OWA
+2585-308 # 2277 OWA & OW
+
+
+# Note that the names are important and have to be specific to line up the diagram
+fit1 <- euler(c("OA" = 101, "OW" = 2177, "OWA" = 1125, "OA&OW" = 79, "OA&OWA" = 32, "OW&OWA" = 2277, "OA&OW&OWA" = 308))
+
+
+plot(fit1,  lty = 1:3, quantities = TRUE)
+# lty changes the lines
+
+plot(fit1, quantities = TRUE, fill = "transparent",
+     lty = 1:3,
+     labels = list(font = 4))
+
+
+#cross check
+2177+2277+308+79 # 4841, total OW
+1125+2277+308+32 # 3742, total OWA
+101+32+79+308    # 520, total OA
+
+
+
 
 
 
