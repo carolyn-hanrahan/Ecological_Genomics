@@ -18,7 +18,7 @@
 -   [Entry 1: 2023-10-16](#id-section1)
 -   [Entry 2: 2023-10-18](#id-section2)
 -   [Entry 3: 2023-10-23](#id-section3)
--   [Entry 4: 2023-09-20](#id-section4)
+-   [Entry 4: 2023-10-25](#id-section4)
 -   [Entry 5: 2023-09-25](#id-section5)
 -   [Entry 6: 2023-09-27](#id-section6)
 -   [Entry 7: 2023-10-02](#id-section7)
@@ -55,13 +55,14 @@
     - Explore patterns in the gene expression data using DESeq2: explore data, plot PCA, test for DGE, make a Venn diagram.
 - see "transcriptomics_day4.R" file for scripts from class (added on from day 4)
 
+<div id='id-section4'/>
+### Entry 4: 2023-10-25
 
-### Entry 4: 2023-09-20
-
--   We finished processing `bam_stats.sh` by altering the vim file and running `bash bam_stats.sh`. Following this, we examined the read data by using the head command.
--   Created an ANGSD directory and a script for running the ANGSD program to determine genotype likelihood.
--   Began running this script using `tmux` in the background.
-
+-   We downloaded many R packages 
+-  Goals for today: 
+  - Transfer a data file that includes additional trait information.
+  - Work step by step through correlation (or association) analyses using WGCNA: install packages, import and filter the data, look for outliers, normalize, construct networks, explore module eigengenes, associate module eigengenes with traits, and visualize the data along the way!
+-
 ### Entry 5: 2023-09-25
 
 - Today's learning objectives: 

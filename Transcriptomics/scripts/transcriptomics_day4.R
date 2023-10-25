@@ -383,7 +383,7 @@ dim(dds_sub)
 dds_sub <- DESeq(dds_sub)
 # [1] 20598 [2] 12
 
-resultsNames(dds_sub)
+resultsNames(dds_sub) 
 
 res_F0_OWvAM <- results(dds_sub, name="treatment_OW_vs_AM", alpha=0.05)
 
