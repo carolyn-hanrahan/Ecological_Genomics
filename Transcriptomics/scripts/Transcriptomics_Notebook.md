@@ -77,7 +77,25 @@
 
     -   Work step by step through correlation (or association) analyses using WGCNA: install packages, import and filter the data, look for outliers, normalize, construct networks, explore module eigengenes, associate module eigengenes with traits, and visualize the data along the way!
 
-### Entry 5: 2023-09-25
+### Entry 5: 2023-10-30
+
+-   Transcriptomics Day 7
+
+-   review whale cancer paper.
+
+-   Goals for today:
+
+    -   Discuss "what's missing" in hands-on coding sessions - to better set you up for the future (so you're not surprised)
+
+    -   Continue working through the correlation (or association) analyses using WGCNA (weighted gene co-expression network analysis): associate module eigengenes with traits and visualize the data!
+    
+    -   Perform Gene Ontology (GO) functional enrichment analyses using GOMWU with our DESeq2 results.
+
+What's missing in our in-class coding sessions...
+
+-   Choosing which programs to use, installing the programs for use, troubleshooting code, moving from one file type to the next, exploring parameter space. ChatGPT and Google and people can be helpful! 
+
+
 
 ### Entry 6: 2023-09-27
 
