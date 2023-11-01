@@ -25,7 +25,35 @@
 
 <div id='id-section1'/>
 
-### Entry 1: 2023-10-16.
+### Entry 1: 2023-10-09
+
+-   Transcriptomics unit; reading paper on Colorado Potato Beetle and insecticide resistance.
+
+-   Coding goals for the day:
+
+    -   Review Acartia hudsonica ecology and biogeography and the experimental evolution/transcriptomics experimental design.
+
+    -   Develop questions that can be addressed and hypotheses that can be tested with the A. hudsonica experiment.
+
+    -   Understand the general work flow or "pipeline" for processing and analyzing RNAseq data.
+
+    -   Visualize and interpret the quality of our Illumina data.
+
+    -   Assess our previously assembled de novo transcriptome assembly using Trinity. Start mapping reads and quantifying abundance simultaneously using Salmon.
+
+## Entry 2: 2023-10-11:
+
+-   Transcriptomics DAY 2.
+-   Copepod study
+    -   effect of environment of Genetic Evolution
+    -   signature of physiological adaptation in F2, F4, F11...
+    -   does the gene response in a given environment depend on the generation? We will conduct a statistical test for interaction between environmental conditions and generation.
+    -   Interaction between environment and generation
+-   Today we are...
+    -   cleaning the raw sequence data
+    -   generating and annotating a de novo reference transcriptome
+
+### Entry 3: 2023-10-16.
 
 -   Transcriptomics Day 3.
 
@@ -39,7 +67,7 @@
 
 <div id='id-section2'/>
 
-### Entry 2: 2023-10-18.
+### Entry 4: 2023-10-18.
 
 -   Transcriptomics Day 4.
 
@@ -50,7 +78,7 @@
 
 <div id='id-section3'/>
 
-### Entry 3: 2023-10-23.
+### Entry 5: 2023-10-23.
 
 -   Transcriptomics Day 5.
 
@@ -63,7 +91,7 @@
 
 <div id='id-section4'/>
 
-### Entry 4: 2023-10-25
+### Entry 6: 2023-10-25
 
 -   Transcriptomics day 6
 
@@ -77,7 +105,7 @@
 
     -   Work step by step through correlation (or association) analyses using WGCNA: install packages, import and filter the data, look for outliers, normalize, construct networks, explore module eigengenes, associate module eigengenes with traits, and visualize the data along the way!
 
-### Entry 5: 2023-10-30
+### Entry 7: 2023-10-30
 
 -   Transcriptomics Day 7
 
@@ -88,18 +116,24 @@
     -   Discuss "what's missing" in hands-on coding sessions - to better set you up for the future (so you're not surprised)
 
     -   Continue working through the correlation (or association) analyses using WGCNA (weighted gene co-expression network analysis): associate module eigengenes with traits and visualize the data!
-    
+
     -   Perform Gene Ontology (GO) functional enrichment analyses using GOMWU with our DESeq2 results.
 
 What's missing in our in-class coding sessions...
 
--   Choosing which programs to use, installing the programs for use, troubleshooting code, moving from one file type to the next, exploring parameter space. ChatGPT and Google and people can be helpful! 
+-   Choosing which programs to use, installing the programs for use, troubleshooting code, moving from one file type to the next, exploring parameter space. ChatGPT and Google and people can be helpful!
 
+### Entry 8: 2023-11-01
 
+-   Transcriptomics Day 8
 
-### Entry 6: 2023-09-27
+-   Goals for today:
 
-### Entry 7: 2023-10-02
+    -   Review Homework Assignment #2.
+
+    -   Perform Gene Ontology (GO) functional enrichment analyses using GOMWU with our DESeq2 results.
+
+### Entry 9: 2023-10-02
 
 ### Entry 8: 2023-10-04
 
