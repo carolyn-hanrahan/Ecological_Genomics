@@ -132,6 +132,8 @@ What's missing in our in-class coding sessions...
     -   Review Homework Assignment #2.
 
     -   Perform Gene Ontology (GO) functional enrichment analyses using GOMWU with our DESeq2 results.
+    - See `transcriptomics_day8.R` file for scripts from this class period. 
+    - See 'GO_MWU.R` file for GO analysis 
 
 ### Entry 9: 2023-10-02
 

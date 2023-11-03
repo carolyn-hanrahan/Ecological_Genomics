@@ -167,7 +167,7 @@ grid.arrange(a1, a2, nrow = 2)
 # convert matrix to numeric
 norm.counts[] <- sapply(norm.counts, as.numeric)
 
-soft_power <- 6
+soft_power <- 6 #the higher the soft power, the more correlated the genes are in the model (this increases r squared)
 temp_cor <- cor
 cor <- WGCNA::cor # use the 'cor' function from the WGCNA package
 
