@@ -111,6 +111,7 @@ res_F0_OWAvAM_df <- data.frame(transcriptID = rownames(res_F0_OWAvAM), res_F0_OW
 # Split the "transcriptID" column by double colons and create new columns of the parts
 res_F0_OWAvAM_df <- separate(res_F0_OWAvAM_df, transcriptID, into = c("part1", "part2", "part3", "rest"), sep = "::", remove = FALSE) 
 
+
 # Create a new column by concatenating "part1" and "part2" with double colons in between
 res_F0_OWAvAM_df$transcriptID_trim <- paste(res_F0_OWAvAM_df$part1, res_F0_OWAvAM_df$part2, sep = "::")
 
@@ -146,3 +147,4 @@ selected_columns_OA <- res_F0_OAvAM_df[c("transcriptID_trim", "log2FoldChange")]
 
 # Save the selected columns as a CSV file
 write.csv(selected_columns_OA, file = "res_F0_OAvAM_LFC.csv", quote = FALSE, row.names = F) # saves the selected columns for GOMWU
+

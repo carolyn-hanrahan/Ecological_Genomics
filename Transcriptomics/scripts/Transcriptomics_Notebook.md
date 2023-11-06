@@ -135,7 +135,21 @@ What's missing in our in-class coding sessions...
     - See `transcriptomics_day8.R` file for scripts from this class period. 
     - See 'GO_MWU.R` file for GO analysis 
 
-### Entry 9: 2023-10-02
+### Entry 9: 2023-11-06:
+
+ Structural Variants day with Csenge 
+
+- Structural variants are important for evolution and disease. They have found that structural variants are more impactful at times in humans than SNPs. Studying structural variants has important implications!
+- Methods for detecting SVs:
+  - Array-based detection: 
+    - high throughput analysis, time and money efficient. Only detects certain types of SVs, however. 
+  - Main computational approaches: 
+    - Read pairs (PEM)
+    - Read depth 
+    - Split read 
+- Today we are using a local PCA method for analyzing structural variants. 
+
+- My chromosome: chromosome number 9: NW_022145604.1
 
 ### Entry 8: 2023-10-04
 

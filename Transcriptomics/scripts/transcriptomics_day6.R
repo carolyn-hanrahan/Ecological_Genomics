@@ -56,7 +56,7 @@ sample_metadata = read.table(file = "Ahud_trait_data.txt",header=T, row.names = 
 dds <- DESeqDataSetFromMatrix(countData = countsTableRound, colData=sample_metadata, 
                               design= ~ 1)
 
-dim(dds)
+dim(dds) # [67916] = original number of genes [38] samples
 
 # Filter out genes with too few reads - remove all genes with counts < 15 in more than 75% of samples, so ~28)
 ## suggested by WGCNA on RNAseq FAQ
@@ -168,11 +168,15 @@ grid.arrange(a1, a2, nrow = 2)
 norm.counts[] <- sapply(norm.counts, as.numeric)
 
 soft_power <- 6 #the higher the soft power, the more correlated the genes are in the model (this increases r squared)
+
+#
+
 temp_cor <- cor
 cor <- WGCNA::cor # use the 'cor' function from the WGCNA package
 
 
 # this step also takes a few minutes; ideally your maxBlockSize is larger than your number of genes to run the memory-intensive network construction all at once.
+
 bwnet <- blockwiseModules(norm.counts,
                           maxBlockSize = 26000,
                           minModuleSize = 30, 
@@ -192,7 +196,6 @@ bwnet <- blockwiseModules(norm.counts,
 # smaller modules.
 
 cor <- temp_cor
-
 
 
 ################################################################# Exploring Eigenvalues 
