@@ -174,7 +174,7 @@ grid.arrange(a1, a2, nrow = 2)
 # convert matrix to numeric
 norm.counts[] <- sapply(norm.counts, as.numeric)
 
-soft_power <- 7
+soft_power <- 8
 temp_cor <- cor
 cor <- WGCNA::cor # use the 'cor' function from the WGCNA package
 
@@ -203,7 +203,7 @@ cor <- temp_cor
 
 
 ########################################################################### Exploring Eigenvalues 
-bwnet <- readRDS("bwnet.rds_7")
+bwnet <- readRDS("bwnet.rds_8")
 
 # 5. Module Eigengenes ---------------------------------------------------------
 module_eigengenes <- bwnet$MEs
@@ -232,7 +232,7 @@ plotDendroAndColors(bwnet$dendrograms[[1]], cbind(bwnet$unmergedColors, bwnet$co
 # transferred object file ("bwnet.rds") over from the server and put it in my Transcriptomics --> data folder 
 
 # To load the object
-bwnet <- readRDS("bwnet.rds_7")
+bwnet <- readRDS("bwnet.rds_8")
 
 # continuing examining eigengenes from last class....
 
@@ -280,7 +280,8 @@ module.trait.corr.pvals <- corPvalueStudent(module.trait.corr, nSamples)
 
 
 # visualize module-trait association as a heatmap
-# visualize module-trait association as a heatmap
+
+str(heatmap.data)
 
 
 heatmap.data <- merge(module_eigengenes, traits, by = 'row.names')
@@ -288,16 +289,15 @@ heatmap.data <- merge(module_eigengenes, traits, by = 'row.names')
 head(heatmap.data)
 
 heatmap.data <- heatmap.data %>% 
-  column_to_rownames(var = 'Row.names')
-
-
-names(heatmap.data)
+  #column_to_rownames(var = 'Row.names')
+  
+  
+  names(heatmap.data)
 
 CorLevelPlot(heatmap.data,
-             x = names(heatmap.data)[12:16],
-             y = names(heatmap.data)[1:11],
+             x = names(heatmap.data)[16:20],
+             y = names(heatmap.data)[2:16],
              col = c("blue1", "skyblue", "white", "pink", "red"))
-
 
 
 
