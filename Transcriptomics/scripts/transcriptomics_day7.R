@@ -42,6 +42,7 @@ library(textshape)
 library(tibble)
 
 library(pheatmap)
+library(WGCNA)
 
 #A. Import the counts matrix and metadata and filter using DESeq2
 # 1. Import the counts matrix and metadata and filter using DESeq2
@@ -173,7 +174,7 @@ grid.arrange(a1, a2, nrow = 2)
 # convert matrix to numeric
 norm.counts[] <- sapply(norm.counts, as.numeric)
 
-soft_power <- 6
+soft_power <- 7
 temp_cor <- cor
 cor <- WGCNA::cor # use the 'cor' function from the WGCNA package
 
@@ -202,6 +203,7 @@ cor <- temp_cor
 
 
 ########################################################################### Exploring Eigenvalues 
+bwnet <- readRDS("bwnet.rds_7")
 
 # 5. Module Eigengenes ---------------------------------------------------------
 module_eigengenes <- bwnet$MEs
@@ -230,7 +232,7 @@ plotDendroAndColors(bwnet$dendrograms[[1]], cbind(bwnet$unmergedColors, bwnet$co
 # transferred object file ("bwnet.rds") over from the server and put it in my Transcriptomics --> data folder 
 
 # To load the object
-bwnet <- readRDS("bwnet.rds")
+bwnet <- readRDS("bwnet.rds_7")
 
 # continuing examining eigengenes from last class....
 
@@ -240,8 +242,11 @@ module_eigengenes <- bwnet$MEs
 head(module_eigengenes) # eigengene for each of the 11 modules. Each one gets an eigengene, AKA, the "strength of association" between that module and the model group. A high number indicates a high expression. We used a specific cutoff point in previous steps but could change that cutoff point to break up the color groups/power thresholds. 
 
 
+
 # get number of genes for each module
-table(bwnet$colors)
+soft_power_7_genes <- table(bwnet$colors)
+
+write.table(soft_power_7_genes, file="genes_perModule_SP7")
 
 # Plot the dendrogram and the module colors before and after merging underneath
 plotDendroAndColors(bwnet$dendrograms[[1]], cbind(bwnet$unmergedColors, bwnet$colors),
@@ -250,6 +255,8 @@ plotDendroAndColors(bwnet$dendrograms[[1]], cbind(bwnet$unmergedColors, bwnet$co
                     addGuide = TRUE,
                     hang= 0.03,
                     guideHang = 0.05)
+
+
 
 # grey module = all genes that doesn't fall into other modules were assigned to the grey module
 # with higher soft power, more genes fall into the grey module
@@ -279,7 +286,7 @@ heatmap.data <- merge(module_eigengenes, traits, by = 'row.names')
 head(heatmap.data)
 
 heatmap.data <- heatmap.data %>% 
-  column_to_rownames(var = 'Row.names')
+  column_to_rownames#(var = 'Row.names')
 
 names(heatmap.data)
 
@@ -292,30 +299,30 @@ CorLevelPlot(heatmap.data,
 
 module.gene.mapping <- as.data.frame(bwnet$colors) # assigns module membership to each gene
 module.gene.mapping %>% 
-  filter(`bwnet$colors` == 'yellow') %>% 
+  filter(`bwnet$colors` == 'purple') %>% 
   rownames()
 
 groups <- sample_metadata[,c(3,1)]
 module_eigengene.metadata <- merge(groups, heatmap.data, by = 'row.names')
 
 #Create a summary data frame of a particular module eigengene information
-MEyellow_summary <- summarySE(module_eigengene.metadata, measurevar="MEyellow", groupvars=c("Generation","treatment"))
+MEpurple_summary <- summarySE(module_eigengene.metadata, measurevar="MEpurple", groupvars=c("Generation","treatment"))
 
-MEyellow_summary
+MEpurple_summary
 
 # Plot a line interaction plot of a particular module eigengene. Y axis is eigengene for the yellow group. Different colors and shapes represent different treatment groups. The error bars indicate how much variation exists between the three replicates for each point. As you can see, there is consistent decrease in expression of the yellow gene across Ocean Warming and Acidification. The Ocean warming group also starts high and drops down with subsequent generations (like OWA). 
 
 
-ggplot(MEyellow_summary, aes(x=as.factor(Generation), y=MEyellow, color=treatment, fill = treatment, shape = treatment)) +
+ggplot(MEpurple_summary, aes(x=as.factor(Generation), y=MEpurple, color=treatment, fill = treatment, shape = treatment)) +
   geom_point(size=5, stroke = 1.5 ) +
-  geom_errorbar(aes(ymin=MEyellow-se, ymax=MEyellow+se), width=.15) +
+  #geom_errorbar(aes(ymin=MEyellow-se, ymax=MEmagenta+se), width=.15) +
   geom_line(aes(color=treatment, group=treatment, linetype = treatment)) +
   scale_color_manual(values = c('#6699CC',"#F2AD00","#00A08A", "#CC3333")) +
   scale_shape_manual(values=c(21,22,23,24), labels = c("Ambient", "Acidification","Warming", "OWA"))+
   scale_fill_manual(values=c('#6699CC',"#F2AD00","#00A08A", "#CC3333"), labels = c("Ambient", "Acidification","Warming", "OWA"))+
   xlab("Generation") +
   theme_bw() +
-  theme(legend.position = "none") +
+  #theme(legend.position = "none") +
   theme(panel.border = element_rect(color = "black", fill = NA, size = 4))+
   theme(text = element_text(size = 20)) +
   theme(panel.grid.minor.y = element_blank(), legend.position = "none", plot.margin = margin(0,6,0,6))
