@@ -151,7 +151,40 @@ What's missing in our in-class coding sessions...
 
 - My chromosome: chromosome number 9: NW_022145604.1
 
-### Entry 8: 2023-10-04
+- chopping genome into different windows, creating PCA plots. Use MDS to display variation between windows. 
+
+### Entry 10: 2023-11-08
+
+Structural variants day 2.
+- cd mydata/str_data/
+
+- Last time we filtered our results and ran a local PCA on the server.
+- Last time, we ran the following code on the server: Rscript ~/myscripts/run_lostruct.R -i ~/mydata/str_data -t snp -s 1000 -I /netfiles/ecogen/structural_variation/sample_info.tsv
+
+- Today, we will look at the output files and visualize the results. 
+
+- We will select a corner to examine genes in the window and complete a GO enrichment analysis. 
+- Homework: compare two other corners. Additionally, we will change the scaffold value. Lastly, we will change the window size (run with a window size above 1000 SNPs)
+   - Run Rscript on the server `~/myscripts/run_lostruct.R -i ~/mydata/str_data -t snp -s 1000 -I /netfiles/ecogen/structural_variation/sample_info.tsv`and change the value of 1,000 to something greater. 
+   - on line 202 in `summarize_run.Rmd` change the value in corner.regions[[1]] from 1 to 2 to examine corner 2 instead of corner 1. 
+   - repeat steps in tutorial from tmux. 
+   - My job ID is 492766. 
+   - create file called `first_corner.csv` in /mydata/str_data/....
+   - to change the cutoff, vim into the `summarize_run.Rmd`, change the prop=.05 value to a smaller value. 
+
+
+
+
+- In class today we....
+  - examined `run_summary.html` to see how structural variants are distributed along my given chromosome. 
+    - there appears to be no distinct clustering in my individual PCA plots (at least not based on any distinct genotypes)
+    
+    
+
+
+
+
+
 
 ### Entry 9: 2023-10-09
 
