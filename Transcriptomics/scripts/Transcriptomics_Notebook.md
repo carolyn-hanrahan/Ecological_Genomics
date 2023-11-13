@@ -163,7 +163,9 @@ Structural variants day 2.
 
 - Today, we will look at the output files and visualize the results. 
 
-- We will select a corner to examine genes in the window and complete a GO enrichment analysis. 
+- We will select a corner to examine genes in the window and complete a GO enrichment analysis.
+
+
 - Homework: compare two other corners. Additionally, we will change the scaffold value. Lastly, we will change the window size (run with a window size above 1000 SNPs)
    - Run Rscript on the server `~/myscripts/run_lostruct.R -i ~/mydata/str_data -t snp -s 1000 -I /netfiles/ecogen/structural_variation/sample_info.tsv`and change the value of 1,000 to something greater. 
    - on line 202 in `summarize_run.Rmd` change the value in corner.regions[[1]] from 1 to 2 to examine corner 2 instead of corner 1. 
@@ -174,14 +176,13 @@ Structural variants day 2.
 
 
 
-
 - In class today we....
   - examined `run_summary.html` to see how structural variants are distributed along my given chromosome. 
     - there appears to be no distinct clustering in my individual PCA plots (at least not based on any distinct genotypes)
     
     
 
-
+For homework, I am choosing to analyze the three corners and shift the cutoff value from .05 to .025.
 
 
 
